@@ -20,6 +20,8 @@ class BaseView
     protected function content(): void
     {
         throw new \Exception("Content not defined in the current view");
+
+        
     }
     /**
      * Méthode qui est appelée automatiquement par le BaseController et dans laquelle on

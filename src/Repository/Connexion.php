@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Entity;
+namespace App\Repository;
 
 class Connexion{
     public static function connect(): \PDO {

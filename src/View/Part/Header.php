@@ -27,7 +27,7 @@ class Header
             <header>Mon Header
                 <nav>
                     <a href="/">Home</a>
-                    <a href="/add-dog">Add dog</a>
+                    <a href="/add-book">Add book</a>
                     (<a href="/person">Person</a>
                     <a href="/about">About</a>)
                 </nav>

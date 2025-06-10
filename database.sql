@@ -1,6 +1,7 @@
 -- Active: 1748644731931@@localhost@8889@books
 
 DROP DATABASE IF EXISTS books;
+
 CREATE DATABASE books;
 
 USE books;
@@ -9,25 +10,29 @@ DROP TABLE IF EXISTS categorie;
 DROP TABLE IF EXISTS commentaire;
 
 
-CREATE TABLE post(
-    id    TINYINT   NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    titre   VARCHAR(255)   NOT NULL,
-    contenu VARCHAR(255)   NOT NULL,
-    date_creation          DATE
-    
-);
+
 
 
 CREATE TABLE categorie(
     id    TINYINT   NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name   VARCHAR(100) 
 );
+CREATE TABLE post(
+    id    TINYINT   NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    titre   VARCHAR(255)   NOT NULL,
+    contenu VARCHAR(255)   NOT NULL,
+    date_creation          DATETIME,
+    categorie_id           TINYINT NOT NULL,
+    FOREIGN KEY (categorie_id) REFERENCES categorie(id)
+    
+);
+
 
 CREATE TABLE commentaire(
     id TINYINT   NOT NULL PRIMARY KEY AUTO_INCREMENT,
     auteur    VARCHAR(100) NOT NULL,
     contenu    VARCHAR(100)  NOT NULL,
-    date_creation  DATE 
+    date_creation  DATETIME 
 );
 
 INSERT INTO categorie (name) VALUES
