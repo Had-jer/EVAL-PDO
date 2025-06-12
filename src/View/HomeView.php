@@ -4,23 +4,27 @@
 namespace App\View;
 
 use App\Core\BaseView;
-class HomeView extends BaseView{
- private array $livres;
 
-public function __construct(array $livres) {
-   $this->livres = $livres;
+class HomeView extends BaseView
+{
+   private array $livres;
 
-}
-protected function content(): void{
-   // echo "nkfkfkfj";
-foreach ($this->livres as $line) {
-   echo " <h2>".$line->getTitre()."</h2>";
-   echo " <p>".$line->getContenu()."</p>";
-   echo " <p>".$line->getDateCreation()->format('Y-m-d H:i:s')."</p>";
-  
+   public function __construct(array $livres)
+   {
+      $this->livres = $livres;
+   }
+   protected function content(): void
+   {
+      foreach ($this->livres as $line) {
+         ?>
+         <a href="/book?id=<?= $line->getId()?>"><div>
+            
+          <h2>"Titre :" <?= $line->getTitre()?></h2>
+          <p> <?= $line->getContenu() ?></p>
+          <p> <?= $line->getDateCreation()->format('Y-m-d')?>  </p>
+      </div></a>
+      <?php
 
-
-}
-
-}
+   }
+   }
 }

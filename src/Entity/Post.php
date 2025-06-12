@@ -7,9 +7,10 @@ class Post{
     private string $titre;
     private string $contenu;
     private \DateTime $date_creation;
+
     
 
-    public function __construct(string $titre, string $contenu , $date_creation, ?int $id=null) {
+    public function __construct(string $titre, string $contenu , \DateTime $date_creation, ?int $id=null) {
         $this->id = $id;
         $this->titre = $titre;
         $this->contenu = $contenu;

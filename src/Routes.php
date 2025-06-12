@@ -3,7 +3,10 @@
 
 namespace App;
 
+use App\Controller\CreateController;
 use App\Controller\HomeController;
+use App\Controller\BookController;
+use App\Controller\UpdateController;
 
 
 
@@ -21,8 +24,13 @@ class Routes
     public static function defineRoutes()
     {
         return [
-            "/" => new HomeController()
+            "/" => new HomeController(),
+            "/add-book" => new CreateController(),
+            '/book'=> new BookController(),
+            "/update" => new UpdateController(),
+
          
         ];
+       
     }
 }

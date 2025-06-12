@@ -32,10 +32,10 @@ class Header
                     <a href="/about">About</a>)
                 </nav>
 
-            <form action="/search" method="get">
+            <!-- <form action="/search" method="get">
                 <label>Search :
                     <input type="text" name="keyword">
-                </label>
+                </label> -->
                 <button>Go</button>
             </form>
 

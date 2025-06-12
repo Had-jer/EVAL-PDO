@@ -17,11 +17,12 @@ CREATE TABLE categorie(
     id    TINYINT   NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name   VARCHAR(100) 
 );
+DROP TABLE IF EXISTS post;
 CREATE TABLE post(
     id    TINYINT   NOT NULL PRIMARY KEY AUTO_INCREMENT,
     titre   VARCHAR(255)   NOT NULL,
     contenu VARCHAR(255)   NOT NULL,
-    date_creation          DATETIME,
+    date_creation          DATE,
     categorie_id           TINYINT NOT NULL,
     FOREIGN KEY (categorie_id) REFERENCES categorie(id)
     

@@ -42,6 +42,10 @@ class Router
         // $errorView->render();
         //Pas obligatoire, mais plus standard, changer le status de la réponse HTTP pour un 404
         // http_response_code(404);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_SERVER['REQUEST_URI'] === '/create') {
+    $controller = new \App\Controller\CreateController();
+    $controller->doPost();
+}
 
     }
 }
