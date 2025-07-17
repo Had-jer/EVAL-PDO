@@ -14,10 +14,7 @@ class BookController extends BaseController
 {
 
     private int $id;
-    // public function __construct($id){
-    //     $this->id = $id;
-
-    // }
+  
     public function doGet(): BaseView
     {
 

@@ -14,7 +14,7 @@ class CreateController extends BaseController {
 
     public function doGet(): CreateView {
         // Créer un nouveau post vide
-        // $post = new PostRepository();
+       
         return new CreateView();
     }
     
@@ -25,8 +25,6 @@ class CreateController extends BaseController {
         $contenu = $_POST['contenu'] ;
         $date_creation =  new DateTime( $_POST['date_creation']);
 
-        //  $date_creation = $_POST['date_creation']; 
-        // $date = DateTime::createFromFormat('d/m/Y', $date_creation);
      
 
         // 2. Création de l'entité
@@ -36,8 +34,7 @@ class CreateController extends BaseController {
        
         $repository = new PostRepository();
         $repository->persist($post);
-        // $tab = $repository->findAll();
-        // return new HomeView($tab);
+        
         header('Location: /');
         exit;
     }
